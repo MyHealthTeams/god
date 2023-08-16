@@ -60,7 +60,7 @@ class TestConditionsSocketResponding < Minitest::Test
     assert_equal c.port, 443
     assert_equal c.responding, false
     # path should not be set for tcp sockets
-    assert_equal c.path, nil
+    assert_nil c.path
   end
 
   def test_socket_should_set_properties_for_unix

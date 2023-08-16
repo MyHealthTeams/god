@@ -186,12 +186,12 @@ class TestProcessDaemon < Minitest::Test
 
   def test_pid_should_return_nil_for_missing_files
     @p.pid_file = ''
-    assert_equal nil, @p.pid
+    assert_nil @p.pid
   end
 
   def test_pid_should_return_nil_for_invalid_pid_files
     File.stubs(:read).returns("four score and seven years ago")
-    assert_equal nil, @p.pid
+    assert_nil @p.pid
   end
 
   def test_pid_should_retain_last_pid_value_if_pid_file_is_removed
